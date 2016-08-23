@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import TodoActions from '../actions/TodoActions'
+import StockActions from '../actions/StockActions'
 import ServerActions from '../actions/ServerActions'
-import TodoStore from "../stores/TodoStore"
+import StockStore from "../stores/StockStore"
 
 
 export default class NewTodoForm extends Component {
@@ -13,7 +13,6 @@ export default class NewTodoForm extends Component {
     }
     this.changeTaskInput = this.changeTaskInput.bind(this);
     this.submit = this.submit.bind(this);
-    //this.getStocks = this.getStocks.bind(this);
   }
 
   changeTaskInput(e) {
@@ -24,9 +23,7 @@ export default class NewTodoForm extends Component {
   submit(e) {
     e.preventDefault();
     let { task } = this.state;
-    TodoActions.searchAPI(this.state.task)
-
-    TodoActions.createTodo({ task });
+    StockActions.searchAPI(this.state.task)
     this.setState({task: ''});
   }
 
@@ -45,8 +42,7 @@ export default class NewTodoForm extends Component {
                    value={task}
                    onChange={this.changeTaskInput}/>
           </div>
-
-          <button type="submit" className="btn btn-default">Check Stocks</button>
+          <button type="submit" className="btn btn-default">Submit</button>
         </form>
       </div>
     )

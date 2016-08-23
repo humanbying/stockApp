@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import ListItem from './ListItem'
-import TodoStore from '../stores/TodoStore'
-import TodoActions from '../actions/TodoActions'
+import StockStore from '../stores/StockStore'
+import StockActions from '../actions/StockActions'
 
-export default class TodoList extends Component {
+export default class StockList extends Component {
   constructor() {
     super();
 
     this.state = {
-      todos: TodoStore.getAll()
+      todos: StockStore.getAll()
     }
 
     this._onChange = this._onChange.bind(this);
@@ -16,25 +16,23 @@ export default class TodoList extends Component {
   }
 
   componentDidMount() {
-    TodoActions.getAllTodos();
-    TodoStore.startListening(this._onChange);
-    TodoStore.on("NEW_STOCK", this.getStocks);
+    StockStore.startListening(this._onChange);
+    StockStore.on("NEW_STOCK", this.getStocks);
   }
 
   componentWillUnmount() {
-    TodoStore.stopListening(this._onChange);
+    StockStore.stopListening(this._onChange);
   }
 
   _onChange() {
     this.setState({
-      todos: TodoStore.getAll()
+      todos: StockStore.getAll()
     });
   }
 
   getStocks(){
-    console.log("TodoStore.getStocks:", TodoStore.getStocks())
     this.setState({
-      stocks: TodoStore.getStocks()
+      stocks: StockStore.getStocks()
     })
   }
 

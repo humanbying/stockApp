@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TodoList from './TodoList'
+import StockList from './StockList'
 import NewTodoForm from './NewTodoForm'
 
 export default class App extends Component {
@@ -8,7 +8,7 @@ export default class App extends Component {
       <div className='container'>
         <h1 className="text-center">Stock App</h1>
         <NewTodoForm />
-        <TodoList />
+        <StockList />
       </div>
     )
   }
