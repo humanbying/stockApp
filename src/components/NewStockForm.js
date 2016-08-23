@@ -4,7 +4,7 @@ import ServerActions from '../actions/ServerActions'
 import StockStore from "../stores/StockStore"
 
 
-export default class NewTodoForm extends Component {
+export default class NewStockForm extends Component {
   constructor() {
     super();
 

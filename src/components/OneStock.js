@@ -32,13 +32,14 @@ export default class OneStock extends Component {
       <div className="container">
         <h1><b>Stock App</b></h1>
         <hr/>
-        <h2><b>  Name: </b>{ Name }</h2>
-        <h2><b>  Symbol: </b>{ Symbol }</h2>
-        <h3><b>  LastPrice: </b>{ LastPrice }</h3>
-        <h3><b>  MarketCap: </b>{ MarketCap }</h3>
-        <h3><b>  High: </b>{ High }</h3>
-        <h3><b>  Low: </b>{ Low }</h3>
-        <h3><b>  Open: </b>{ Open }</h3>
+        <h2><b>  Name: { Name } <br/>
+                 Symbol: { Symbol } </b></h2>
+
+        <h3><b>  LastPrice: ${ LastPrice }<br/>
+                 MarketCap: ${ MarketCap }<br/>
+                 High: ${ High }<br/>
+                 Low: ${ Low }<br/>
+                 Open: ${ Open }</b></h3>
       </div>
     )
   }
