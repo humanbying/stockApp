@@ -26,13 +26,18 @@ export default class OneStock extends Component {
     })
   }
 
+  reloadPage(symbol){
+    console.log("loading....");
+    StockActions.getQuote(symbol);
+  }
+
   render() {
     let { Name, Symbol, LastPrice, MarketCap, High, Low, Open } = this.state.quote
     return (
       <div className="container">
         <h1><b>Stock App</b></h1>
         <hr/>
-        <h2><b>  Name: { Name } <br/>
+        <h2><b>  Name: { Name } <button className = "btn-success btn-xs" onClick = {() => this.reloadPage(Symbol)}>Refresh Quote</button><br/>
                  Symbol: { Symbol } </b></h2>
 
         <h3><b>  LastPrice: ${ LastPrice }<br/>
